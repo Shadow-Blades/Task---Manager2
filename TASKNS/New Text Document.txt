@@ -1,0 +1,42 @@
+Create a full-featured backend API using NestJS and TypeORM with PostgreSQL for a Task Manager system.
+
+The project should include the following modules:
+
+1. **Auth Module**:
+   - Register and login endpoints
+   - Use JWT for authentication
+   - Hash passwords using bcrypt
+   - Add login throttling (optional)
+
+2. **User Module**:
+   - User entity with fields: id, name, email, password, role (admin/user)
+   - Admin can view all users; users can only see their own data
+   - Role-based guards (use custom decorators for RBAC)
+
+3. **Task Module**:
+   - Task entity with fields: id, title, description, status (todo/in-progress/done), dueDate, assignedTo (User)
+   - CRUD for tasks
+   - Only assigned user or admin can update/delete the task
+   - Add filtering (by status, date) and pagination in GET requests
+
+4. **Validation**:
+   - Use DTOs with class-validator for all input validation
+   - Return consistent API responses (e.g., success, message, data)
+
+5. **Error Handling**:
+   - Implement global exception filters to format errors consistently
+
+6. **Security & Config**:
+   - Use a `.env` file for JWT secret and DB credentials
+   - Use Helmet and CORS in the main app for security
+
+7. **Swagger Documentation**:
+   - Add Swagger documentation at `/api-docs` endpoint
+   - Document Auth, User, and Task routes
+
+8. **Deployment Ready**:
+   - Must run via `npm run start:dev`
+   - PostgreSQL config for local or Railway deployment
+   - Include basic README instructions
+
+NestJS version 10+ preferred. Use modular architecture. Folder structure should separate modules cleanly.

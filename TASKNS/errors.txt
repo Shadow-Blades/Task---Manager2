@@ -1,0 +1,46 @@
+[10:58:04 pm] Starting compilation in watch mode...
+
+DeprecationWarning: 'getMutableClone' has been deprecated since v4.0.0. Use an appropriate `factory.update...` method instead, use `setCommentRange` or `setSourceMapRange`, and avoid setting `parent`.
+src/app.module.ts:4:31 - error TS2307: Cannot find module './app.controller' or its corresponding type declarations.
+
+4 import { AppController } from './app.controller';
+                                ~~~~~~~~~~~~~~~~~~
+
+src/app.module.ts:5:28 - error TS2307: Cannot find module './app.service' or its corresponding type declarations.
+
+5 import { AppService } from './app.service';
+                             ~~~~~~~~~~~~~~~
+
+src/app.module.ts:9:29 - error TS2307: Cannot find module 'cache-manager-redis-store' or its corresponding type declarations.
+
+9 import * as redisStore from 'cache-manager-redis-store';
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/app.module.ts:26:7 - error TS2345: Argument of type '{ isGlobal: boolean; imports: (typeof ConfigModule)[]; inject: (typeof ConfigService)[]; useFactory: (configService: ConfigService) => { store: any; host: any; port: any; ttl: number; max?: undefined; } | { ...; }; }' is not assignable to parameter of type 'CacheModuleAsyncOptions'.
+  Object literal may only specify known properties, and 'isGlobal' does not exist in type 'CacheModuleAsyncOptions'.
+
+26       isGlobal: true,
+         ~~~~~~~~~~~~~~
+
+src/tasks/tasks.controller.ts:7:28 - error TS2307: Cannot find module '../auth/guards/roles.guard' or its corresponding type declarations.
+
+7 import { RolesGuard } from '../auth/guards/roles.guard';
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/tasks/tasks.service.ts:82:14 - error TS2322: Type 'LeanDocument<Task>[]' is not assignable to type 'Task[]'.
+  Type 'LeanDocument<Task>' is missing the following properties from type 'Task': $getAllSubdocs, $ignore, $isDefault, $isDeleted, and 48 more.
+
+82     return { tasks, total };
+                ~~~~~
+
+  src/tasks/tasks.service.ts:44:74
+    44   async findAll(filterDto: FilterTasksDto, currentUser: User): Promise<{ tasks: Task[], total: number }> {
+                                                                                ~~~~~
+    The expected type comes from property 'tasks' which is declared here on type '{ tasks: Task[]; total: number; }'
+
+src/tasks/tasks.service.ts:103:5 - error TS2322: Type 'LeanDocument<Task>' is not assignable to type 'Task'.
+
+103     return task;
+        ~~~~~~~~~~~~
+
+[10:58:08 pm] Found 7 errors. Watching for file changes.
