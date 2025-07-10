@@ -85,6 +85,7 @@ npm start
 The default admin account is:
 - Email: admin@example.com
 - Password: Admin123!
+- (To access this admin account, please run the scrpit from- TASKNS/task-manager-api/src/scripts/create-admin.js)
 
 You can change these defaults by setting environment variables:
 - ADMIN_EMAIL
