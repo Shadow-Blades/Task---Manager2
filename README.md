@@ -1,5 +1,5 @@
 Task Manager 2
-Task Manager 2 is a web-based application designed for efficient task management, built primarily with JavaScript and TypeScript. This project allows users to create, organize, track, and manage their tasks seamlessly through a user-friendly interface.
+Task Manager 2 is a web-based application designed for efficient task management, built primarily with JavaScript and TypeScript. This project allows users to create, organize, track, and manage their tasks with ease.
 
 Table of Contents
 Features
