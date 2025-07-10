@@ -1,80 +1,104 @@
-Task Manager 2
-Task Manager 2 is a web-based application designed for efficient task management, built primarily with JavaScript and TypeScript. This project allows users to create, organize, track, and manage their tasks with ease.
+# Task Manager Application
 
-Table of Contents
-Features
-Tech Stack
-Installation
-Usage
-Project Structure
-Contributing
-License
-Contact
-Features
-Add Tasks: Easily add new tasks with relevant details such as title, description, and deadlines.
-Edit & Delete Tasks: Modify or remove tasks as needed.
-Mark as Complete: Toggle the status of tasks between complete and incomplete.
-Task Filtering & Search: Filter tasks by status (completed, pending) or search for tasks by keywords.
-Responsive Design: Works smoothly on desktops, tablets, and mobile devices.
-Persistent Storage: [If implemented] Tasks are saved locally or synced with a backend for persistence.
-Tech Stack
-JavaScript – Primary scripting language for front-end logic.
-TypeScript – Adds static typing for improved reliability and maintainability.
-HTML – Structure of the web pages.
-CSS – Styling and layout of the application.
-Installation
-Follow these steps to set up the project locally:
+A full-stack task management application built with NestJS (MongoDB) backend and React frontend.
 
-Clone the repository
+## Features
 
-bash
-git clone https://github.com/Shadow-Blades/Task---Manager2.git
-cd Task---Manager2
-Install dependencies
+- User authentication (register, login, JWT)
+- Role-based access control (admin/user)
+- Task management (create, read, update, delete)
+- Task filtering and pagination
+- User management (admin only)
+- Responsive UI with Material-UI
+- Performance optimized
 
-bash
+## Performance Optimizations
+
+### Backend
+- Database indexing for faster queries
+- Lean queries for better MongoDB performance
+- Response compression for faster API responses
+- Optimized database queries
+
+### Frontend
+- Code splitting with React.lazy and Suspense
+- Preloading critical resources
+- Optimized component rendering
+- Centralized API service
+
+## Prerequisites
+
+- Node.js (v14+)
+- MongoDB
+- npm or yarn
+
+## Installation
+
+### Clone the repository
+```bash
+git clone <repository-url>
+cd task-manager
+```
+
+### Backend Setup
+```bash
+cd task-manager-api
+
+# Install dependencies
 npm install
-Start the development server
 
-bash
+# Create .env file
+cp .env.example .env
+
+# Update .env with your MongoDB connection string
+# MONGODB_URI=mongodb://localhost:27017/task_manager
+
+# Create database indexes (optional but recommended for performance)
+npm run create:indexes
+
+# Create admin user
+npm run create:admin
+
+# Start the backend server
+npm run start:dev
+```
+
+### Frontend Setup
+```bash
+cd task-manager-client
+
+# Install dependencies
+npm install
+
+# Create .env file
+cp .env.example .env
+
+# Update .env with your API URL
+# REACT_APP_API_URL=http://localhost:3001
+
+# Start the frontend server
 npm start
-The application should now be running locally. Open http://localhost:3000 in your browser to view it.
+```
 
-Usage
-Add a Task: Use the input form to create a new task.
-Edit/Delete: Click on the corresponding button next to each task to edit or delete it.
-Mark Complete: Use the checkbox or button to toggle a task's completion status.
-Filter/Search: Use the filter dropdown or search bar to quickly find tasks.
-Project Structure
-A typical structure might look like this:
+## Admin Account
 
-Code
-Task---Manager2/
-├── src/
-│   ├── components/    # Reusable UI components
-│   ├── pages/         # Main views/pages
-│   ├── utils/         # Utility functions and helpers
-│   ├── App.tsx        # Main app component
-│   └── index.tsx      # Entry point
-├── public/            # Static assets
-├── package.json       # Project metadata and dependencies
-├── README.md          # This file
-Note: The actual structure may vary. Check the repository for the most accurate layout.
+The default admin account is:
+- Email: admin@example.com
+- Password: Admin123!
+- (To access this admin account, please run the scrpit from- TASKNS/task-manager-api/src/scripts/create-admin.js)
 
-Contributing
-Contributions are welcome! To contribute:
+You can change these defaults by setting environment variables:
+- ADMIN_EMAIL
+- ADMIN_PASSWORD
+- ADMIN_NAME
 
-Fork the repository.
-Create a new branch (git checkout -b feature/your-feature-name).
-Commit your changes (git commit -am 'Add new feature').
-Push to the branch (git push origin feature/your-feature-name).
-Open a pull request describing your changes.
-Please open an issue first if you want to discuss major changes.
+## API Documentation
 
-License
-This project is licensed under the MIT License.
+Swagger API documentation is available at:
+```
+http://localhost:3001/api-docs
+```
 
-Contact
-Created and maintained by Shadow-Blades.
+## License
 
-If you have any questions, suggestions, or feedback, feel free to open an issue or contact the maintainer directly via GitHub.
+MIT 
